@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     int currentLevel;
 
     public int pointsPerUnitTravelled = 10;
+    int PaintableObjects;
+    public int PaintedObjects; 
 
     void Awake()
     {
@@ -57,6 +59,8 @@ public class GameManager : MonoBehaviour
         {
             UIManager.Instance.setState(UIState.MAINMENU);
         }
+
+        //paintableObjects = GameObject.FindGameObjectsWithTag("PaintableObject").Length;
     }
 
     public List<PlayerController> getAllPlayers()

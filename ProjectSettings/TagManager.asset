@@ -8,6 +8,7 @@ TagManager:
   - Prop
   - MenuCamera
   - MenuLight
+  - PaintableObject
   layers:
   - Default
   - TransparentFX
