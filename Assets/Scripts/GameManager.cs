@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.setState(UIState.MAINMENU);
         }
 
-        //paintableObjects = GameObject.FindGameObjectsWithTag("PaintableObject").Length;
+        PaintableObjects = GameObject.FindGameObjectsWithTag("PaintableObject").Length;
     }
 
     public List<PlayerController> getAllPlayers()
