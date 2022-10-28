@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class RippleCont : MonoBehaviour
 {
-    private Material material;
+    MeshRenderer rend;
+    public Material[] Materials;
+    GameObject Player; 
     // Start is called before the first frame update
     void Start()
     {
-        material = GetComponent<MeshRenderer>().material; 
+        rend = GetComponent<MeshRenderer>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+       
     }
 
     // Update is called once per frame
@@ -27,15 +31,30 @@ public class RippleCont : MonoBehaviour
         var ray = camera.ScreenPointToRay(new Vector3(mousePosition.x, mousePosition.y, camera.nearClipPlane));
         if (Physics.Raycast(ray, out var hit) && hit.collider.gameObject == gameObject)
         {
+            Debug.Log(hit.point);
             StartRipple(hit.point);
             
         }
     }
 
-    void StartRipple(Vector3 center)
+    void StartRipple(Vector3 center)//change to collider https://docs.unity3d.com/ScriptReference/Collider.ClosestPoint.html
     {
-        material.SetVector("_RippleCenter", center);
-        material.SetFloat("_RippleStartTime", Time.time);
+        Debug.Log("Started");
+        for (int i = 0; i < rend.materials.Length; i++)
+        {
+            Debug.Log("StartedForLoop");
+            
+            for (int j = 0; j < rend.materials.Length; j++)
+            {
+                Material[] currentlyAssignedMaterials = GetComponent<Renderer>().materials;
+                currentlyAssignedMaterials[j] = Materials[j];
+                currentlyAssignedMaterials[j].SetVector("_RippleCenter", center);
+                currentlyAssignedMaterials[j].SetFloat("_RippleStartTime", Time.time);
+                GetComponent<Renderer>().materials = currentlyAssignedMaterials;
+            }
+            
+        }
+        
     }
 
 }
