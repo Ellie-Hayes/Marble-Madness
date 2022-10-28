@@ -33,9 +33,22 @@ namespace Scrtwpns.Mixbox
 
         public void ColourNew(Color takenColour)
         {
-            Color currentColor = Mixbox.Lerp(takenColour, EndColor, 10f);
-            myMaterial.color = currentColor;
+            //Color currentColor = Mixbox.Lerp(takenColour, EndColor, 10f);
+            //myMaterial.color = currentColor;
+            
+            float rsquared = ((EndColor.r * EndColor.r) + (takenColour.r * takenColour.r)) / 2;
+            float gsquared = ((EndColor.g * EndColor.g) + (takenColour.g * takenColour.g)) / 2;
+            float bsquared = ((EndColor.b * EndColor.b) + (takenColour.b * takenColour.b)) / 2;
 
+            float rsqrt = Mathf.Sqrt(rsquared);
+            float gsqrt = Mathf.Sqrt(gsquared);
+            float bsqrt = Mathf.Sqrt(bsquared);
+
+            Color newColour = new Color(rsqrt, gsqrt, bsqrt);
+            StartColor = EndColor;
+            EndColor = newColour;
+            myMaterial.color = newColour;
+            
             //EndColor = NewColor;
             //goingForward = true;
 
