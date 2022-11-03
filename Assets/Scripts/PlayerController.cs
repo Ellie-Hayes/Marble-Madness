@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
 
     Vector3 posSinceLastScore;
 
+    [Tooltip("The force multiplier of the jump-pad")]
+    [Range(1f, 3f)]
+    public float jumpForce = 2.5f;
+    private float jumpForceMod = 800f;
+
     public bool CanMove
     {
         get { return canMove; }
@@ -89,6 +94,12 @@ public class PlayerController : MonoBehaviour
         {
             horizInput = Input.GetAxis("Horizontal");
             vertInput = Input.GetAxis("Vertical");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RB.AddForce(Vector3.up * (jumpForce * jumpForceMod), ForceMode.Force);
+            canMove = true; 
         }
     }
 
