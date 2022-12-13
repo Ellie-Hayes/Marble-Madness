@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public void initialisePlayers()
     {
+
         GameObject[] playerGOs = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject playerGo in playerGOs)

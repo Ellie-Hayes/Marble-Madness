@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour
 
     public void init()
     {
+        //GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
+        //if (player.Length > 1)
+        //{
+            //Destroy(player[0].gameObject);
+        //}
         // do not allow duplicate players
         if (GameManager.Instance.registerNewPlayer(id, this) == false)
         {

@@ -9,6 +9,7 @@ TagManager:
   - MenuCamera
   - MenuLight
   - PaintableObject
+  - PlayerChecker
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - Level
-  - 
+  - PP
   - 
   - 
   - 

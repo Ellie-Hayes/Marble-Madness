@@ -18,4 +18,17 @@ public class KillVolume : MonoBehaviour
             LevelManager.Instance.setPlayerPosition(playerController);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == playerTag)
+        {
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+
+            playerController.RB.velocity = Vector3.zero;
+            playerController.RB.angularVelocity = Vector3.zero;
+
+            LevelManager.Instance.setPlayerPosition(playerController);
+        }
+    }
 }

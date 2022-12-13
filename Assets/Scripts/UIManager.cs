@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        levelUI.gameObject.SetActive(false);
         if (Instance == null)
         {
             Instance = this;
@@ -97,6 +98,7 @@ public class UIManager : MonoBehaviour
 
     public void updateScore(int id, int score)
     {
+        /*
         switch (id)
         {
             case 0:
@@ -106,11 +108,12 @@ public class UIManager : MonoBehaviour
             case 1:
                 scoreP2.text = score.ToString();
                 break;
-        }
+        }*/
     }
 
     public void OnLevelTimerTicked(int remainingTime)
     {
-        time.text = remainingTime.ToString();
+
+        //time.text = remainingTime.ToString();
     }
 }

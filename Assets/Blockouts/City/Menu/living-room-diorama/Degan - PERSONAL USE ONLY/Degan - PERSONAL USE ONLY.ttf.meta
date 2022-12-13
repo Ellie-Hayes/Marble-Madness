@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2a451e9654001504aae72680f0d707a9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Degan
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 442f5d90e8e52ae4197fec8ea86cf90a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

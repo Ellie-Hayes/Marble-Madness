@@ -9,7 +9,8 @@ public class PaintObject : MonoBehaviour
     public Material[] currentMaterials;
     float duration = 2.0f;
     //Material[] mats; 
-    bool ChangedColour; 
+    bool ChangedColour;
+    public bool gem;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class PaintObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "PlayerChecker" && !ChangedColour)
+        if (collision.gameObject.tag == "PlayerChecker" && !ChangedColour && !gem)
         {
             /*
             mats = new Material[rend.materials.Length];
@@ -47,14 +48,14 @@ public class PaintObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "PlayerChecker" && !ChangedColour)
+        if (other.gameObject.tag == "PlayerChecker" && !ChangedColour && !gem)
         {
             ChangeColour();
             
         }
     }
 
-    private void ChangeColour()
+    public void ChangeColour()
     {
         var mats = new Material[rend.materials.Length];
 
@@ -71,4 +72,5 @@ public class PaintObject : MonoBehaviour
     {
        
     }
+
 }

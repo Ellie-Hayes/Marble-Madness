@@ -6,10 +6,9 @@ public class RippleCont : MonoBehaviour
 {
     private MaterialPropertyBlock materialBlock;
     MeshRenderer rend;
-    public Material[] Materials;
+   
     GameObject Player;
     bool hit = false;
-
     public Material whiteMat;
     public Material[] currentMaterials;
 
@@ -43,7 +42,7 @@ public class RippleCont : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            CastRay();
+           // CastRay();
         }
     }
 
